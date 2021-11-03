@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Mi Superbiblio</title>{% endblock %}
+
+{% block content %}        
+        <h1>ÍNDICE DE CATÁLOGO</h1>
+        {{autor}}
+        <h2>Ultimos libros</h2>
+
+        <ul> 
+        {% for libro in libros %}
+            <li>
+                {{libro.title}}
+                {% if libro.author %} 
+                ({{libro.author.apellidos}})
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+
+{% endblock %}
